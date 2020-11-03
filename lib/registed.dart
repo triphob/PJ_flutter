@@ -1,3 +1,5 @@
+import 'package:projectlogin/store.dart';
+
 import 'loginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -91,7 +93,8 @@ class _State extends State<RegiterPage> {
                     )
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
-                )),
+                )
+                ),
               ],
             )));
   }
@@ -113,7 +116,7 @@ class _State extends State<RegiterPage> {
           .then((user) {
         print("Sign up user successful.");
         MaterialPageRoute materialPageRoute =
-            MaterialPageRoute(builder: (BuildContext context) => LoginPage());
+            MaterialPageRoute(builder: (BuildContext context) => Store());
         Navigator.of(context).pushAndRemoveUntil(
             materialPageRoute, (Route<dynamic> route) => false);
       }).catchError((error) {

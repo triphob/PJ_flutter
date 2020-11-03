@@ -1,3 +1,5 @@
+import 'package:projectlogin/product_show.dart';
+
 import 'home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +104,7 @@ class _State extends State<LoginPage> {
         .then((response) {
       //print('Authen Success');
       MaterialPageRoute materialPageRoute =
-          MaterialPageRoute(builder: (BuildContext context) => Home());
+          MaterialPageRoute(builder: (BuildContext context) => Product_show());
       Navigator.of(context).pushAndRemoveUntil(
           materialPageRoute, (Route<dynamic> route) => false);
     }).catchError((response) {
